@@ -1,8 +1,8 @@
-PWD c:/Users/samue/Documents/GitHub/calculus-3-notes/Final Exam Notes
+PWD d:/Sam's Folder D/Github/calculus-3-notes/Final Exam Notes
 INPUT c:/texlive/2023/texmf.cnf
 INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/samue/Documents/GitHub/calculus-3-notes/Final Exam Notes/document.tex
+INPUT d:/Sam's Folder D/Github/calculus-3-notes/Final Exam Notes/document.tex
 OUTPUT document.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
