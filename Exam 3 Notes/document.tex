@@ -1,0 +1,216 @@
+\author{Samuel Gido}
+\title{Exam 3 Notes}
+\date{Fall Semester 2023}
+
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{fullpage}
+\usepackage[bottom]{footmisc}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+
+\begin{document}
+\maketitle
+
+\section*{Theorems}
+
+  \subsection*{Fubini's Theorem}
+
+  Given  \( R := \{ (x, y)\,: \,a \leq x \leq b,\ c \leq y \leq d \}\)
+
+  \begin{equation*}
+    \iint\limits_R f(x,y)\, dy\,dx \\
+    =
+    \int_{a}^{b} \int_{c}^{d} f(x,y)\, dy\, dx \\
+    = 
+    \int_{c}^{d} \int_{a}^{b} f(x, y)\, dx\, dy \\
+  \end{equation*}
+
+\pagebreak
+
+\section*{General Integration}
+
+  {\Large
+    For some function f, and some region \(\Omega\):
+  }
+
+  \begin{equation*}
+    \int \limits_{\Omega} f\, d\\(something) = I
+  \end{equation*}
+
+  {\Large
+    $I$ is the average value of $f$ on $\Omega$ times the size\footnote{The meaning of size differs based on the region you're integrating over} of $\Omega$
+  }
+
+\pagebreak
+
+\section*{Integration Over a 2D Region}
+
+  2-dimensional regions are be described by how well they can be ''sliced'' \newline
+  
+  Type 1 regions are described by the following, given:
+
+  \[
+    D_{1} := \{(x,y) : a \leq x \leq b,\, f_{1}(x) \leq y \leq f_{2}(x)\} \\ 
+  \]
+
+  \begin{equation*}
+    \int \limits_{D_{1}} h(x,y)\,dy\,dx  \\
+  \end{equation*}
+
+  And Type 2 regions can be described similarly: 
+  
+  \[
+    D_{2} := \{(x,y) : g_{1}(y) \leq x \leq g_{2}(y),\, c \leq y \leq d \}
+  \]
+
+  \begin{equation*}
+    \int \limits_{D_{2}} h(x,y)\,dx\,dy \\ 
+  \end{equation*}
+
+  Clearly, these integrals are setup with the best order of integration
+
+\pagebreak
+
+  \section*{Coordinate Systems}
+
+  4 systems are used in this course:
+
+  \begin{enumerate}
+    \item Cartiesian: 2D \& 3D
+    \item \textcolor{cyan}{Polar: 2D}
+    \item \textcolor{orange}{Cylindrical: 3D}
+    \item \textcolor{teal}{Spherical: 3D}
+  \end{enumerate}
+
+  \subsection*{Conversions}
+
+  $x \rightarrow \textcolor{cyan}{rcos(\theta)} \rightarrow \textcolor{orange}{rcos(\theta)} \rightarrow \textcolor{teal}{\rho\sin(\theta)cos(\phi)}$ \newline
+  $y \rightarrow \textcolor{cyan}{rsin(\theta)} \rightarrow \textcolor{orange}{rsin(\theta)} \rightarrow \textcolor{teal}{\rho\sin(\theta)sin(\phi)}$ \newline
+  $z \rightarrow \textcolor{orange}{z} \rightarrow \textcolor{teal}{\rho\cos(\phi)}$ \newline
+
+  \noindent $\textcolor{teal}{\rho} \rightarrow \sqrt{x^{2} + y^{2} + z^{2}} \rightarrow \textcolor{orange}{\sqrt{r^{2} + z^{2}}}$ \newline
+  $\textcolor{teal}{\theta} \rightarrow arctan(\frac{y}{x})$ \newline
+  $\phi \rightarrow arccos(\frac{z}{\rho}) \rightarrow arccos(\frac{z}{\rho})$ \newline
+
+  \subsection*{Jacobian constants}
+
+  $dA \rightarrow \textcolor{cyan}{r\,dr\,d\theta}$ \newline
+  $dV \rightarrow \textcolor{orange}{r\,dr\,d\theta\,dz}$ \newline
+  $dV \rightarrow \textcolor{teal}{\rho^{2}sin(\phi)\,d\rho\,d\theta\,d\phi}$
+
+\pagebreak
+
+  \section*{Vector Fields}
+  Considering $ \vec{F} := <x, y, z>$
+
+  \subsection*{Divergence of $\vec{F}$}
+
+  - Denoted by $\nabla \cdot \vec{F} = F_{x}^{1}\,+\,F_{y}^{2}\,+\,F_{z}^{2}$ \newline
+  - Measures how much $\vec{F}$ is ''spreading out''
+  - $\nabla \cdot \vec{F} = 0$ when $\vec{F}$ is \textbf{incompressable}
+  
+  \subsection*{Curl of $\vec{F}$}
+  - Denoted by $\nabla \times \vec{F} = \vec{F} \, \times <\partial_x ,\, \partial_y ,\, \partial_z >$ \newline
+  - $\nabla \times \vec{F} = \vec{0}$ when $\vec{F}$ is \textbf{irrotational and conservative} \newline
+  - Magnitude of $\nabla \times \vec{F}$ measures angular velocity \newline
+  - Direction of $\nabla \times \vec{F}$ measures axis of rotation by right hand rule \newline
+
+  \subsection*{Conservative Vector Fields}
+  
+  - \(\vec{F}\) is conservative if there exists some function, $f$\footnote{Called the potential function}, where $\nabla f = \vec{F}$ \newline
+
+  \noindent - Full Theorems: 
+
+  \begin{center}
+    if \(\vec{F} : \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}\) is defined as differentiable on a simply connected domain \\
+    and \\
+    \(F_{y}^{1} = F_{x}^{2}\) \\
+    then \(\vec{F}\) is conservative.
+  \end{center}
+
+  \begin{center} 
+    if \(\vec{F} : \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}\) is defined as differentiable on a simply connected domain \\
+    and \\ 
+    \(\nabla \times \vec{F} = 0\) \\
+    then \(\vec{F}\) is conservative.
+  \end{center}
+
+\pagebreak
+
+  \section*{Line Integrals}
+
+  \subsection*{Scalar line integrals}
+  Let \(f\) be a function with a domain that includes a smooth curve \(C\) that is parametrized by \(r(t) = <x(t),\, y(t),\, z(t)>,\, a \leq t \leq b\).\\ 
+
+  The scalar integral of \(f\) along \(C\) is 
+  \begin{center}
+    \(\int \limits_{C} f(x,y,z)\,ds = \int_{a}^{b}f(\vec{r}(t)) \cdot \|\vec{r}'(t)\|\,dt\)
+  \end{center}
+
+  \subsection*{Vector line integrals}
+  The vector line integral of a vector field \(\vec{F}\) along oriented smooth curve \(C\) is 
+  \begin{center}
+    \( \int \limits_C \vec{F} \cdot \vec{T}\,ds \) \\
+    Which can be simplified to \\
+    \( \vec{F} \cdot \vec{T}\,ds = \vec{F}(\vec{r}(t)) \cdot \frac{\vec{r}\,'(t)}{\|\vec{r}\,'(t)\|} \cdot \vec{r}\,'(t)\,dt = \vec{F}(\vec{r}(t)) \cdot \vec{r}\,'(t)\,dt\) \\
+    Therefore the vector line integral of \(\vec{F}\) over \(C\) is \\
+    \( \int_{a}^{b} \vec{F}(\vec{r}(t)) \cdot \vec{r}\,'(t)\,dt \)
+  \end{center}
+
+  \subsection*{Orientation of line integrals}
+  Orientation and parametrization \textbf{do not matter for scalar line integrals}. \\
+
+  \noindent However, they do matter for vector line integrals. This isn't a huge problem, just remember
+
+  \begin{center}
+    \(\int_{a}^{b}\vec{F}\,d\vec{r} = (-1)\int_{b}^{a} \vec{F}\,  d\vec{r} \)
+  \end{center}
+
+\pagebreak
+
+  \subsection*{Fundamental theorem of line integrals}
+  When calculating a vector line integral with a conservative vector field, the fundamental theorem of line integrals applies: 
+
+  \begin{center}
+    \(\int \limits_C \vec{F} \, d\vec{r} = f(b) - f(a)\) \\
+    or \\
+    \(\int \limits_C \nabla f \, d\vec{r} = f(b) - f(a)\) 
+  \end{center}
+
+  \subsection*{Line integrals with respect to x, y, z}
+  Assuming \(\vec{r}(t) = <x(t),\,y(t),\,z(t)>\)
+
+  \begin{center}
+    \(\int \limits_C f \, dx = \int_{a}^{b}f(\vec{r}(t)) \cdot x'(t)\,dt\) \\
+  \end{center}
+
+\pagebreak
+
+\section*{Integration of functions over surfaces}
+
+  \subsection*{Parametric Surfaces}
+  Like with line integrals, when doing a surface integral the surface has to be parametrized. 
+  Parametrized surfaces have this form:
+
+  \begin{center}
+    \(r(u, v) = <x(u, v),\,y(u,v),\,z(u, v)>\)
+  \end{center}
+
+  \noindent With this form, the parameter domain is a set of 2 points on the \(uv\) plane.
+
+  \subsection*{Surface Integral of a Scalar Function}
+
+  Assume \(S\) is a piecewise smooth surface with parametrization \(r(u, v) = <x(u, v),\,y(u,v),\,z(u,v)>\) and parameter domain \(D\). 
+  The surface integral of a scalar-valued function \(f\) over \(S\) is 
+  \begin{center}
+    \(\iint \limits_S f(x,y,z)\,dS = \iint \limits_D f(r(u,v)) \cdot \|r_{u} \times r_{v{}}\|\,dA\)
+  \end{center}
+  
+  \noindent This somewhat resembles the definition for a line integral, with one key difference being the term \(\|r'(t)\|\) in the line integral has become \(\|r_{u}\times r_{v}\|\). \(r'(t)\) is tangent to the curve whereas the vector \(r_{u} \times r_{v}\) is perpendicular to the surface
+
+\end{document}

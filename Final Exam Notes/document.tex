@@ -1,0 +1,43 @@
+\author{Samuel Gido}
+\title{Final Exam Notes}
+\date{Fall Semester 2023}
+
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{fullpage}
+\usepackage[bottom]{footmisc}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+
+\begin{document}
+  \maketitle
+  \section*{Divergence Theorem}
+
+  In 2 dimensions, divergence theorem is
+  \begin{center}
+    \(\iint \limits_T \nabla \cdot \vec{F}\,dV = \int \limits_{\partial T} \vec{F} \cdot \vec{n} \, ds\)
+  \end{center}
+
+  \noindent And in 3 dimensions,
+  \begin{center}
+    \(\iiint \limits_R \textnormal{div}\vec{F}\,dV = \iint \limits_{\partial R}\vec{F} \cdot \vec{n}\,dS\)
+  \end{center}
+
+  \noindent In this scenario, the \(\partial\) symbol next to a set denotes the boundaries of a set. Also, the normal vectors represent the outward orientation of the unit vector.
+
+\pagebreak
+
+\section*{Stoke's Theorem}
+
+Definition: \\
+The flux of curl \(F\) across a surface \(S\) can be found with only information about the values of \(F\) along the boundary of \(S\). Also, we can calculate the 
+
+\begin{center}
+  \(\iint \limits_S (\nabla \times \vec{F}) \cdot \vec{n} \, dS = \int \limits_{\partial S} \vec{F} \cdot d\vec{r}\)
+\end{center}
+
+\end{document}
